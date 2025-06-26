@@ -1,0 +1,39 @@
+{
+  "name": "@teo-garcia/eslint-config-shared",
+  "version": "0.1.0",
+  "description": "Shared ESLint flat config for React/TypeScript web templates.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./react": "./react.js"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "react",
+    "shared"
+  ],
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^8.57.0 || ^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "@eslint/eslintrc": "^2.1.4",
+    "@eslint/compat": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint-plugin-import": "^2.29.1",
+    "globals": "^13.24.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-jest": "^27.6.3",
+    "eslint-plugin-testing-library": "^6.5.0",
+    "eslint-plugin-playwright": "^0.15.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
