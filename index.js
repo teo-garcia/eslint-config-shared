@@ -3,7 +3,9 @@ import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
-import _import from "eslint-plugin-import";
+import unicornPlugin from "eslint-plugin-unicorn";
+import sonarjsPlugin from "eslint-plugin-sonarjs";
+import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import globals from "globals";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -22,13 +24,16 @@ export default [
   // Base recommended rule set from ESLint
   js.configs.recommended,
 
+  unicornPlugin.configs["flat/recommended"],
+  sonarjsPlugin.configs.recommended,
+
   // Shared TypeScript rules
   {
     files: ["**/*.ts", "**/*.tsx"],
 
     plugins: {
       "@typescript-eslint": tsPlugin,
-      import: fixupPluginRules(_import),
+      "simple-import-sort": simpleImportSortPlugin,
     },
 
     languageOptions: {
@@ -59,29 +64,12 @@ export default [
 
     rules: {
       ...tsPlugin.configs.recommended.rules,
-
-      // Prefer import consistency
-      "import/order": [
-        "error",
-        {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-            "object",
-            "type",
-          ],
-          "newlines-between": "always",
-          alphabetize: { order: "asc", caseInsensitive: true },
-        },
-      ],
-      "import/no-duplicates": "error",
-
-      // TypeScript already handles undefined checks
       "no-undef": "off",
+
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+      "unicorn/expiring-todo-comments": "off",
+      "unicorn/prevent-abbreviations": "off",
     },
   },
 
@@ -90,7 +78,7 @@ export default [
     files: ["**/*.js", "**/*.jsx"],
 
     plugins: {
-      import: fixupPluginRules(_import),
+      "simple-import-sort": simpleImportSortPlugin,
     },
 
     languageOptions: {
@@ -117,24 +105,10 @@ export default [
     },
 
     rules: {
-      "import/order": [
-        "error",
-        {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-            "object",
-            "type",
-          ],
-          "newlines-between": "always",
-          alphabetize: { order: "asc", caseInsensitive: true },
-        },
-      ],
-      "import/no-duplicates": "error",
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+      "unicorn/expiring-todo-comments": "off",
+      "unicorn/prevent-abbreviations": "off",
     },
   },
 
