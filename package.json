@@ -1,6 +1,6 @@
 {
   "name": "@teo-garcia/eslint-config-shared",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Shared ESLint flat config for React/TypeScript web templates.",
   "type": "module",
   "main": "index.js",

@@ -75,7 +75,7 @@ export default [
 
   // Shared JavaScript rules
   {
-    files: ["**/*.js", "**/*.jsx"],
+    files: ["**/*.{cjs,mjs,js,jsx}"],
 
     plugins: {
       "simple-import-sort": simpleImportSortPlugin,
