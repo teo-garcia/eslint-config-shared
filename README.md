@@ -10,8 +10,5 @@ Shared flat-config ESLint presets used across the React template projects.
 
 ---
 
-### Notes
-
 - The base preset expects a `tsconfig.json` file in the project root so that the TypeScript rules can operate correctly.
-- It adds Prettier integration out-of-the-box (`plugin:prettier/recommended`).
 - Consumers compose the configs explicitly, giving full control over the rule application order.

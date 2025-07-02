@@ -8,7 +8,6 @@ export default [
   // React specific linting
   {
     files: ["**/*.jsx", "**/*.tsx"],
-
     plugins: {
       react: fixupPluginRules(reactPlugin),
       "react-hooks": fixupPluginRules(reactHooksPlugin),

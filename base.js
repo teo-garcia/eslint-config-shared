@@ -8,6 +8,7 @@ import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import globals from "globals";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +29,8 @@ export default [
       "**/*.d.ts",
       "**/build/**",
       "**/coverage/**",
+      "public/**/*",
+      ".react-router/**/*",
     ],
   },
 
@@ -79,6 +82,7 @@ export default [
       "simple-import-sort/exports": "error",
       "unicorn/expiring-todo-comments": "off",
       "unicorn/prevent-abbreviations": "off",
+      "sonarjs/todo-tag": "warn",
     },
   },
 
@@ -120,7 +124,5 @@ export default [
       "unicorn/prevent-abbreviations": "off",
     },
   },
-
-  // Allow consumers to keep using "extends" based presets if needed
-  ...compat.extends("plugin:prettier/recommended"),
+  eslintConfigPrettier,
 ];

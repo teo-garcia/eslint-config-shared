@@ -2,7 +2,7 @@
   "author": "teo-garcia",
   "description": "Shared ESLint flat config for fullstack web templates",
   "engines": {
-    "node": ">=20.11"
+    "node": ">=21"
   },
   "exports": {
     ".": {
@@ -45,17 +45,16 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-playwright": "^2.2.0",
-    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-sonarjs": "^1.0.4",
+    "eslint-plugin-sonarjs": "^3.0.4",
     "eslint-plugin-testing-library": "^7.0.0",
-    "eslint-plugin-unicorn": "^55.0.0",
+    "eslint-plugin-unicorn": "^59.0.1",
     "globals": "^16.0.0"
   },
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.2.0"
+  "version": "0.2.5"
 }
