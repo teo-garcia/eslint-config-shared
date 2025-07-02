@@ -1,4 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
@@ -21,6 +20,17 @@ const compat = new FlatCompat({
 });
 
 export default [
+  // Default ignores for all projects
+  {
+    ignores: [
+      "**/dist/**",
+      "**/node_modules/**",
+      "**/*.d.ts",
+      "**/build/**",
+      "**/coverage/**",
+    ],
+  },
+
   // Base recommended rule set from ESLint
   js.configs.recommended,
 
@@ -44,8 +54,7 @@ export default [
         ecmaFeatures: {
           jsx: true,
         },
-        // Expect the consumer project to have a tsconfig.json in the root
-        project: ["./tsconfig.json"],
+        project: [path.join(process.cwd(), "tsconfig.json")],
       },
       globals: {
         ...globals.browser,
