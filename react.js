@@ -35,11 +35,25 @@ export default [
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
       ...jsxA11yPlugin.configs.recommended.rules,
-      "react-refresh/only-export-components": "warn",
+      ...reactRefreshPlugin.configs.recommended.rules,
+      "react-refresh/only-export-components": "off",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "react/jsx-uses-react": "off",
       "react/jsx-uses-vars": "error",
+    },
+  },
+  {
+    files: [
+      "**/components/**/*.tsx",
+      "**/features/**/*.tsx",
+      "src/components/**/*.tsx",
+      "src/features/**/*.tsx",
+      "src/app/components/**/*.tsx",
+      "src/app/features/**/*.tsx",
+    ],
+    rules: {
+      "react-refresh/only-export-components": "warn",
     },
   },
 ];
