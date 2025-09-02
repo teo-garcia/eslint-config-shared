@@ -1,7 +1,9 @@
 import globals from "globals";
+import sonarjsPlugin from "eslint-plugin-sonarjs";
 
 export default [
   // Node-specific configuration
+  ...sonarjsPlugin.configs["flat/recommended"],
   {
     files: ["**/*.ts", "**/*.js"],
     languageOptions: {

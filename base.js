@@ -1,24 +1,11 @@
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import unicornPlugin from "eslint-plugin-unicorn";
-import sonarjsPlugin from "eslint-plugin-sonarjs";
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import globals from "globals";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Helper for re-using legacy "extends" configs inside the flat-config world
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
 
 export default [
   // Default ignores for all projects
@@ -38,7 +25,6 @@ export default [
   js.configs.recommended,
 
   unicornPlugin.configs["flat/recommended"],
-  sonarjsPlugin.configs.recommended,
 
   // Shared TypeScript rules
   {
@@ -76,13 +62,14 @@ export default [
 
     rules: {
       ...tsPlugin.configs.recommended.rules,
+      'unicorn/no-null': 'off',
+      'unicorn/no-useless-undefined': 'off',
       "no-undef": "off",
-
-      "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
-      "unicorn/expiring-todo-comments": "off",
-      "unicorn/prevent-abbreviations": "off",
+      "simple-import-sort/imports": "error",
       "sonarjs/todo-tag": "warn",
+      "unicorn/expiring-todo-comments": "warn",
+      "unicorn/prevent-abbreviations": "off",
     },
   },
 
