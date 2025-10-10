@@ -73,6 +73,10 @@
       "optional": true
     }
   },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "type": "module",
   "types": "base.d.ts",
   "version": "0.3.0"
