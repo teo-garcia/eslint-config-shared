@@ -1,14 +1,54 @@
 # @teo-garcia/eslint-config-shared
 
-Shared flat-config ESLint presets used across the React template projects.
+Shared ESLint flat-config presets for JavaScript, TypeScript, React, and Node.js projects.
 
-## Available exports
+## Installation
 
-- `@teo-garcia/eslint-config-shared/base` - Core shared rules (JS/TS, import sorting, unicorn, sonarjs)
-- `@teo-garcia/eslint-config-shared/react` - React-specific rules (JSX, hooks, a11y, testing-library, playwright)
-- `@teo-garcia/eslint-config-shared/node` - Node-specific rules and globals
+```bash
+npm install --save-dev @teo-garcia/eslint-config-shared eslint
+```
 
----
+## Usage
 
-- The base preset expects a `tsconfig.json` file in the project root so that the TypeScript rules can operate correctly.
-- Consumers compose the configs explicitly, giving full control over the rule application order.
+### React Projects
+
+```javascript
+// eslint.config.js
+import base from '@teo-garcia/eslint-config-shared/base'
+import react from '@teo-garcia/eslint-config-shared/react'
+
+export default [...base, ...react]
+```
+
+### Node.js Projects
+
+```javascript
+// eslint.config.js
+import base from '@teo-garcia/eslint-config-shared/base'
+import node from '@teo-garcia/eslint-config-shared/node'
+
+export default [...base, ...node]
+```
+
+### JavaScript Only
+
+```javascript
+// eslint.config.js
+import base from '@teo-garcia/eslint-config-shared/base'
+
+export default [...base]
+```
+
+## Available Exports
+
+- **base** - Core shared rules (JS/TS, import sorting, unicorn, sonarjs)
+- **react** - React-specific rules (JSX, hooks, a11y, testing-library, playwright)
+- **node** - Node-specific rules and globals
+
+## Notes
+
+The base preset expects a `tsconfig.json` file in the project root for TypeScript rules to operate correctly.
+
+## License
+
+MIT
