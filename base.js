@@ -19,7 +19,9 @@ export default [
       'coverage/**',
       'dist/**',
       'node_modules/**',
+      'playwright-report/**',
       'public/**/*',
+      'test-results/**',
     ],
   },
 

@@ -17,6 +17,10 @@
       "import": "./node.js",
       "types": "./node.d.ts"
     },
+    "./playwright": {
+      "import": "./playwright.js",
+      "types": "./playwright.d.ts"
+    },
     "./react": {
       "import": "./react.js",
       "types": "./react.d.ts"
