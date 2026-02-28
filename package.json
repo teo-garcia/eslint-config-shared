@@ -81,7 +81,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teo-garcia/eslint-config-shared.git"
+  },
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.3.7"
+  "version": "0.3.8"
 }
