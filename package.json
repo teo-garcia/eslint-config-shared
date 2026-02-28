@@ -79,7 +79,8 @@
   },
   "scripts": {
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -87,5 +88,9 @@
   },
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.3.8"
+  "version": "0.3.8",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.0"
+  }
 }
