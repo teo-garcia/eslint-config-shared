@@ -1,6 +1,7 @@
 {
   "author": "teo-garcia",
   "description": "Shared ESLint flat config for fullstack web templates",
+  "packageManager": "pnpm@10.2.0",
   "engines": {
     "node": ">=24"
   },
