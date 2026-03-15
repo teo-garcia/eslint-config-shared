@@ -16,11 +16,11 @@ Part of the [@teo-garcia/templates](https://github.com/teo-garcia/templates) eco
 
 ## Features
 
-| Preset | Includes |
-|--------|----------|
-| **base** | TypeScript, Unicorn, SonarJS, import sorting, Prettier integration |
+| Preset    | Includes                                                                 |
+| --------- | ------------------------------------------------------------------------ |
+| **base**  | TypeScript, Unicorn, SonarJS, import sorting, Prettier integration       |
 | **react** | React, React Hooks, JSX a11y, Testing Library, Playwright, React Refresh |
-| **node** | Node.js globals, ESM enforcement |
+| **node**  | Node.js globals, ESM enforcement                                         |
 
 ## Requirements
 
@@ -65,12 +65,12 @@ export default [...base]
 
 ## Exports
 
-| Export | Description |
-|--------|-------------|
-| `@teo-garcia/eslint-config-shared` | Base config (default) |
-| `@teo-garcia/eslint-config-shared/base` | TypeScript + core rules |
-| `@teo-garcia/eslint-config-shared/react` | React-specific rules |
-| `@teo-garcia/eslint-config-shared/node` | Node.js-specific rules |
+| Export                                   | Description             |
+| ---------------------------------------- | ----------------------- |
+| `@teo-garcia/eslint-config-shared`       | Base config (default)   |
+| `@teo-garcia/eslint-config-shared/base`  | TypeScript + core rules |
+| `@teo-garcia/eslint-config-shared/react` | React-specific rules    |
+| `@teo-garcia/eslint-config-shared/node`  | Node.js-specific rules  |
 
 ## Extending
 
@@ -101,11 +101,11 @@ export default [
 
 ## Related Packages
 
-| Package | Description |
-|---------|-------------|
+| Package                                                                                    | Description         |
+| ------------------------------------------------------------------------------------------ | ------------------- |
 | [@teo-garcia/prettier-config-shared](https://github.com/teo-garcia/prettier-config-shared) | Prettier formatting |
-| [@teo-garcia/tsconfig-shared](https://github.com/teo-garcia/tsconfig-shared) | TypeScript settings |
-| [@teo-garcia/vitest-config-shared](https://github.com/teo-garcia/vitest-config-shared) | Test configuration |
+| [@teo-garcia/tsconfig-shared](https://github.com/teo-garcia/tsconfig-shared)               | TypeScript settings |
+| [@teo-garcia/vitest-config-shared](https://github.com/teo-garcia/vitest-config-shared)     | Test configuration  |
 
 ## License
 

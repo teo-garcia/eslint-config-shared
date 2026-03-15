@@ -1,3 +1,3 @@
-import { FlatESLintConfigItem } from "eslint-define-config";
-declare const config: FlatESLintConfigItem[];
-export = config;
+import { FlatESLintConfigItem } from 'eslint-define-config'
+declare const config: FlatESLintConfigItem[]
+export = config

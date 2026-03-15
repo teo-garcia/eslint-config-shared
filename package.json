@@ -79,6 +79,7 @@
     }
   },
   "scripts": {
+    "check": "pnpm format:check",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -88,5 +89,8 @@
   },
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.3.8"
+  "version": "0.3.8",
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
 }
