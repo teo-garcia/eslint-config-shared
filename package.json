@@ -1,6 +1,6 @@
 {
   "author": "teo-garcia",
-  "description": "Shared ESLint flat config for fullstack web templates",
+  "description": "Shared ESLint flat config for fullstack web and mobile templates",
   "packageManager": "pnpm@10.2.0",
   "engines": {
     "node": ">=24"
@@ -25,6 +25,10 @@
     "./react": {
       "import": "./react.js",
       "types": "./react.d.ts"
+    },
+    "./react-native": {
+      "import": "./react-native.js",
+      "types": "./react-native.d.ts"
     }
   },
   "keywords": [
@@ -55,6 +59,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sonarjs": "^3.0.4",
     "eslint-plugin-testing-library": "^7.0.0",
+    "eslint-plugin-react-native": "^4.1.0",
     "eslint-plugin-unicorn": "^61.0.0",
     "globals": "^16.0.0"
   },
@@ -76,6 +81,9 @@
     },
     "eslint-plugin-testing-library": {
       "optional": true
+    },
+    "eslint-plugin-react-native": {
+      "optional": true
     }
   },
   "scripts": {
@@ -89,7 +97,7 @@
   },
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "devDependencies": {
     "prettier": "^3.8.1"
   }
