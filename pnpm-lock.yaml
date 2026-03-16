@@ -44,6 +44,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^7.0.0
         version: 7.0.1(eslint@9.29.0)
+      eslint-plugin-react-native:
+        specifier: ^4.1.0
+        version: 4.1.0(eslint@9.29.0)
       eslint-plugin-react-refresh:
         specifier: ^0.4.9
         version: 0.4.20(eslint@9.29.0)
@@ -63,6 +66,9 @@ importers:
         specifier: ^16.0.0
         version: 16.4.0
     devDependencies:
+      '@teo-garcia/prettier-config-shared':
+        specifier: ^0.2.9
+        version: 0.2.9(prettier@3.8.1)
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -241,6 +247,12 @@ packages:
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+
+  '@teo-garcia/prettier-config-shared@0.2.9':
+    resolution: {integrity: sha512-G1X4yBPxe+Fn1XBB9N+6DPZM+0+n+Ec1ofoXcAbqfzOPaDdJKo7LAzhf87HiWyfSbMzgclJDyvAhO4fWQ2LPrQ==}
+    engines: {node: '>=24'}
+    peerDependencies:
+      prettier: ^3.0.0
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -643,6 +655,14 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
+
+  eslint-plugin-react-native-globals@0.1.2:
+    resolution: {integrity: sha512-9aEPf1JEpiTjcFAmmyw8eiIXmcNZOqaZyHO77wgm0/dWfT/oxC1SrIq8ET38pMxHYrcB6Uew+TzUVsBeczF88g==}
+
+  eslint-plugin-react-native@4.1.0:
+    resolution: {integrity: sha512-QLo7rzTBOl43FvVqDdq5Ql9IoElIuTdjrz9SKAXCvULvBoRZ44JGSkx9z4999ZusCsb4rK3gjS8gOGyeYqZv2Q==}
+    peerDependencies:
+      eslint: ^3.17.0 || ^4 || ^5 || ^6 || ^7 || ^8
 
   eslint-plugin-react-refresh@0.4.20:
     resolution: {integrity: sha512-XpbHQ2q5gUF8BGOX4dHe+71qoirYMhApEPZ7sfhF/dNnOF1UXnCMGZf79SFTBO7Bz5YEIT4TMieSlJBWhP9WBA==}
@@ -1654,6 +1674,10 @@ snapshots:
 
   '@rtsao/scc@1.1.0': {}
 
+  '@teo-garcia/prettier-config-shared@0.2.9(prettier@3.8.1)':
+    dependencies:
+      prettier: 3.8.1
+
   '@types/estree@1.0.8': {}
 
   '@types/json-schema@7.0.15': {}
@@ -2196,6 +2220,13 @@ snapshots:
       zod-validation-error: 4.0.2(zod@4.3.6)
     transitivePeerDependencies:
       - supports-color
+
+  eslint-plugin-react-native-globals@0.1.2: {}
+
+  eslint-plugin-react-native@4.1.0(eslint@9.29.0):
+    dependencies:
+      eslint: 9.29.0
+      eslint-plugin-react-native-globals: 0.1.2
 
   eslint-plugin-react-refresh@0.4.20(eslint@9.29.0):
     dependencies:

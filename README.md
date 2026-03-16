@@ -2,13 +2,15 @@
 
 # @teo-garcia/eslint-config-shared
 
-**Shared ESLint flat-config presets for TypeScript, React, and Node.js projects**
+**Shared ESLint flat-config presets for TypeScript, React, and Node.js
+projects**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/@teo-garcia/eslint-config-shared?color=blue)](https://www.npmjs.com/package/@teo-garcia/eslint-config-shared)
 [![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?logo=eslint&logoColor=white)](https://eslint.org)
 
-Part of the [@teo-garcia/templates](https://github.com/teo-garcia/templates) ecosystem
+Part of the [@teo-garcia/templates](https://github.com/teo-garcia/templates)
+ecosystem
 
 </div>
 

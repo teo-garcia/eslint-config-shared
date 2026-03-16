@@ -95,10 +95,12 @@
     "type": "git",
     "url": "git+https://github.com/teo-garcia/eslint-config-shared.git"
   },
+  "prettier": "@teo-garcia/prettier-config-shared",
   "type": "module",
   "types": "base.d.ts",
   "version": "0.4.0",
   "devDependencies": {
+    "@teo-garcia/prettier-config-shared": "^0.2.9",
     "prettier": "^3.8.1"
   }
 }
