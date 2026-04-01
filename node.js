@@ -1,6 +1,7 @@
+import { defineConfig } from 'eslint/config'
 import globals from 'globals'
 
-export default [
+export default defineConfig([
   // Node-specific configuration
   {
     files: ['**/*.ts', '**/*.js'],
@@ -16,4 +17,4 @@ export default [
       'unicorn/prefer-node-protocol': 'error',
     },
   },
-]
+])

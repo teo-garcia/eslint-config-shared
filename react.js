@@ -1,10 +1,11 @@
 import { fixupPluginRules } from '@eslint/compat'
+import { defineConfig } from 'eslint/config'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import reactRefreshPlugin from 'eslint-plugin-react-refresh'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 
-export default [
+export default defineConfig([
   // React specific linting
   {
     files: ['**/*.jsx', '**/*.tsx'],
@@ -56,4 +57,4 @@ export default [
       'react-refresh/only-export-components': 'warn',
     },
   },
-]
+])

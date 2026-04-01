@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import { defineConfig } from 'eslint/config'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
@@ -8,7 +9,7 @@ import unicornPlugin from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import path from 'node:path'
 
-export default [
+export default defineConfig([
   // Default ignores for all projects
   {
     ignores: [
@@ -116,4 +117,4 @@ export default [
     },
   },
   eslintConfigPrettier,
-]
+])

@@ -1,4 +1,5 @@
 import { fixupPluginRules } from '@eslint/compat'
+import { defineConfig } from 'eslint/config'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import reactNativePlugin from 'eslint-plugin-react-native'
@@ -13,7 +14,7 @@ import reactNativePlugin from 'eslint-plugin-react-native'
  * - eslint-plugin-react-native adds RN-specific rules and globals
  *   (StyleSheet, Platform, __DEV__, etc.).
  */
-export default [
+export default defineConfig([
   {
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {
@@ -73,4 +74,4 @@ export default [
       // No react-refresh here — Metro handles HMR without module boundary rules
     },
   },
-]
+])
