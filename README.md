@@ -18,11 +18,13 @@ ecosystem
 
 ## Presets
 
-| Preset    | Includes                                                                 |
-| --------- | ------------------------------------------------------------------------ |
-| **base**  | TypeScript, Unicorn, SonarJS, import sorting, Prettier integration       |
-| **react** | React, React Hooks, JSX a11y, Testing Library, Playwright, React Refresh |
-| **node**  | Node.js globals, ESM enforcement                                         |
+| Preset           | Includes                                                           |
+| ---------------- | ------------------------------------------------------------------ |
+| **base**         | TypeScript, Unicorn, SonarJS, import sorting, Prettier integration |
+| **react**        | React, React Hooks, JSX a11y, React Refresh                        |
+| **react-native** | React Native, React Hooks, React Native rules                      |
+| **playwright**   | Playwright E2E rules for `e2e/**`                                  |
+| **node**         | Node.js globals, ESM enforcement                                   |
 
 ---
 
@@ -35,19 +37,21 @@ ecosystem
 
 ## Exports
 
-| Export                                   | Description             |
-| ---------------------------------------- | ----------------------- |
-| `@teo-garcia/eslint-config-shared`       | Base config (default)   |
-| `@teo-garcia/eslint-config-shared/base`  | TypeScript + core rules |
-| `@teo-garcia/eslint-config-shared/react` | React-specific rules    |
-| `@teo-garcia/eslint-config-shared/node`  | Node.js-specific rules  |
+| Export                                          | Description               |
+| ----------------------------------------------- | ------------------------- |
+| `@teo-garcia/eslint-config-shared`              | Base config (default)     |
+| `@teo-garcia/eslint-config-shared/base`         | TypeScript + core rules   |
+| `@teo-garcia/eslint-config-shared/react`        | React-specific rules      |
+| `@teo-garcia/eslint-config-shared/react-native` | React Native / Expo rules |
+| `@teo-garcia/eslint-config-shared/playwright`   | Playwright E2E rules      |
+| `@teo-garcia/eslint-config-shared/node`         | Node.js-specific rules    |
 
 ---
 
 ## Notes
 
 - Requires a `tsconfig.json` in the project root for TypeScript rules
-- React plugins are optional and produce no warnings in Node.js projects
+- Framework plugins are optional and only required when their export is used
 - Uses ESLint flat config format (ESLint 10+)
 
 ---

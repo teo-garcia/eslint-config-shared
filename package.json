@@ -87,10 +87,11 @@
     }
   },
   "scripts": {
-    "check": "pnpm format:check",
+    "check": "pnpm format:check && pnpm smoke:consumer",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "smoke:consumer": "node scripts/consumer-smoke.mjs"
   },
   "repository": {
     "type": "git",
@@ -99,7 +100,7 @@
   "prettier": "@teo-garcia/prettier-config-shared",
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "devDependencies": {
     "@teo-garcia/prettier-config-shared": "^0.2.9",
     "husky": "^9.1.7",
