@@ -16,6 +16,14 @@ import reactNativePlugin from 'eslint-plugin-react-native'
  */
 export default defineConfig([
   {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    rules: {
+      // React Native's package entrypoint uses Flow syntax that import/namespace
+      // cannot parse reliably from TypeScript consumer projects.
+      'import/namespace': 'off',
+    },
+  },
+  {
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {
       react: fixupPluginRules(reactPlugin),

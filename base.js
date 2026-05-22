@@ -3,11 +3,9 @@ import { defineConfig } from 'eslint/config'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
+import importPlugin from 'eslint-plugin-import'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
-import sonarjsPlugin from 'eslint-plugin-sonarjs'
-import unicornPlugin from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import path from 'node:path'
 
 export default defineConfig([
   // Default ignores for all projects
@@ -28,8 +26,13 @@ export default defineConfig([
 
   // Base recommended rule set from ESLint
   js.configs.recommended,
-  unicornPlugin.configs['recommended'],
-  sonarjsPlugin.configs['recommended'],
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
+  {
+    rules: {
+      'import/no-unresolved': 'off',
+    },
+  },
 
   // Shared TypeScript rules
   {
@@ -48,7 +51,6 @@ export default defineConfig([
         ecmaFeatures: {
           jsx: true,
         },
-        project: [path.join(process.cwd(), 'tsconfig.json')],
       },
       globals: {
         ...globals.browser,
@@ -57,24 +59,15 @@ export default defineConfig([
     },
 
     settings: {
-      'import/resolver': {
-        typescript: {},
-        node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        },
-      },
+      'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     },
 
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      'unicorn/no-null': 'off',
-      'unicorn/no-useless-undefined': 'off',
+      'import/no-unresolved': 'off',
       'no-undef': 'off',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
-      'sonarjs/todo-tag': 'warn',
-      'unicorn/expiring-todo-comments': 'warn',
-      'unicorn/prevent-abbreviations': 'off',
     },
   },
 
@@ -101,19 +94,13 @@ export default defineConfig([
     },
 
     settings: {
-      'import/resolver': {
-        typescript: {},
-        node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        },
-      },
+      'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     },
 
     rules: {
+      'import/no-unresolved': 'off',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
-      'unicorn/expiring-todo-comments': 'off',
-      'unicorn/prevent-abbreviations': 'off',
     },
   },
   eslintConfigPrettier,

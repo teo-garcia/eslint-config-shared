@@ -3,12 +3,12 @@ node_modules/
 
 # Build output
 dist/
+.consumer-smoke/
 
 # Lockfiles (auto-generated, format varies by package manager version)
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
-
 
 
 

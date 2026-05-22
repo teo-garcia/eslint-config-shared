@@ -12,9 +12,7 @@ export default defineConfig([
       },
     },
     rules: {
-      // Node-specific rules that differ from base defaults
-      'unicorn/prefer-module': 'error',
-      'unicorn/prefer-node-protocol': 'error',
+      // Node-specific rule overrides belong here as the baseline matures.
     },
   },
 ])

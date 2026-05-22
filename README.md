@@ -18,13 +18,13 @@ ecosystem
 
 ## Presets
 
-| Preset           | Includes                                                           |
-| ---------------- | ------------------------------------------------------------------ |
-| **base**         | TypeScript, Unicorn, SonarJS, import sorting, Prettier integration |
-| **react**        | React, React Hooks, JSX a11y, React Refresh                        |
-| **react-native** | React Native, React Hooks, React Native rules                      |
-| **playwright**   | Playwright E2E rules for `e2e/**`                                  |
-| **node**         | Node.js globals, ESM enforcement                                   |
+| Preset           | Includes                                                            |
+| ---------------- | ------------------------------------------------------------------- |
+| **base**         | TypeScript, import validation, import sorting, Prettier integration |
+| **react**        | React, React Hooks, JSX a11y, React Refresh                         |
+| **react-native** | React Native, React Hooks, React Native rules                       |
+| **playwright**   | Playwright E2E rules for `e2e/**`                                   |
+| **node**         | Node.js globals                                                     |
 
 ---
 
@@ -50,7 +50,10 @@ ecosystem
 
 ## Notes
 
-- Requires a `tsconfig.json` in the project root for TypeScript rules
+- Import validation is provided by `eslint-plugin-import`; unresolved import
+  checks stay off by default because framework and TypeScript path aliases are
+  consumer-owned
+- Type-aware TypeScript linting is intentionally not enabled in `base`
 - Framework plugins are optional and only required when their export is used
 - Uses ESLint flat config format (ESLint 10+)
 

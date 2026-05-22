@@ -58,9 +58,7 @@
     "eslint-plugin-react-native": "^4.1.0 || ^5.0.0",
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-simple-import-sort": "^12.1.1 || ^13.0.0",
-    "eslint-plugin-sonarjs": "^4.0.2",
     "eslint-plugin-testing-library": "^7.16.2",
-    "eslint-plugin-unicorn": "^64.0.0",
     "globals": "^17.4.0"
   },
   "peerDependenciesMeta": {
@@ -100,7 +98,7 @@
   "prettier": "@teo-garcia/prettier-config-shared",
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "devDependencies": {
     "@teo-garcia/prettier-config-shared": "^0.2.9",
     "husky": "^9.1.7",
