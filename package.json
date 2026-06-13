@@ -29,6 +29,10 @@
     "./react-native": {
       "import": "./react-native.js",
       "types": "./react-native.d.ts"
+    },
+    "./angular": {
+      "import": "./angular.js",
+      "types": "./angular.d.ts"
     }
   },
   "keywords": [
@@ -36,6 +40,7 @@
     "eslintconfig",
     "typescript",
     "react",
+    "angular",
     "node",
     "shared"
   ],
@@ -59,7 +64,8 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-simple-import-sort": "^12.1.1 || ^13.0.0",
     "eslint-plugin-testing-library": "^7.16.2",
-    "globals": "^17.4.0"
+    "globals": "^17.4.0",
+    "angular-eslint": "^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-react": {
@@ -82,6 +88,9 @@
     },
     "eslint-plugin-react-native": {
       "optional": true
+    },
+    "angular-eslint": {
+      "optional": true
     }
   },
   "scripts": {
@@ -98,9 +107,10 @@
   "prettier": "@teo-garcia/prettier-config-shared",
   "type": "module",
   "types": "base.d.ts",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "devDependencies": {
     "@teo-garcia/prettier-config-shared": "^0.2.9",
+    "angular-eslint": "^22.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.3",
     "prettier": "^3.8.1"

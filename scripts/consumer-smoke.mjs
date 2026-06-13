@@ -115,6 +115,7 @@ writeJson(path.join(consumerDir, 'package.json'), {
   dependencies: {
     [packageJson.name]: `file:${path.join(tarballDir, tarballName)}`,
     ...packageJson.peerDependencies,
+    '@angular/core': '^19.0.0',
     '@playwright/test': '^1.50.0',
     '@types/react': '^19.0.0',
     react: '^19.0.0',
@@ -124,6 +125,7 @@ writeJson(path.join(consumerDir, 'package.json'), {
 
 writeJson(path.join(consumerDir, 'tsconfig.json'), {
   compilerOptions: {
+    experimentalDecorators: true,
     jsx: 'react-jsx',
     module: 'NodeNext',
     moduleResolution: 'NodeNext',
@@ -151,6 +153,10 @@ writeFixture(
   "import base from '@teo-garcia/eslint-config-shared/base'\nimport reactNative from '@teo-garcia/eslint-config-shared/react-native'\n\nexport default [...base, ...reactNative]\n"
 )
 writeFixture(
+  'eslint.angular.config.mjs',
+  "import base from '@teo-garcia/eslint-config-shared/base'\nimport angular from '@teo-garcia/eslint-config-shared/angular'\n\nexport default [...base, ...angular]\n"
+)
+writeFixture(
   'eslint.playwright.config.mjs',
   "import base from '@teo-garcia/eslint-config-shared/base'\nimport playwright from '@teo-garcia/eslint-config-shared/playwright'\n\nexport default [...base, ...playwright]\n"
 )
@@ -159,6 +165,16 @@ writeFixture(
   'src/base/math.ts',
   'export function add(left: number, right: number): number {\n  return left + right\n}\n'
 )
+writeFixture(
+  'src/angular/valid.service.ts',
+  "import { Injectable } from '@angular/core'\n\n@Injectable({ providedIn: 'root' })\nexport class ValidService {\n  readonly label = 'Save'\n}\n"
+)
+writeFixture('src/angular/valid.component.html', '<p>Save</p>\n')
+writeFixture(
+  'src/angular/bad-output.component.ts',
+  "import { Component, output } from '@angular/core'\n\n@Component({\n  selector: 'app-bad-output',\n  templateUrl: './bad-output.component.html',\n})\nexport class BadOutputComponent {\n  readonly onClick = output<void>()\n}\n"
+)
+writeFixture('src/angular/bad-output.component.html', '\n')
 writeFixture(
   'src/base/bad-import.ts',
   "import { add } from './math'\nimport { add as addAgain } from './math'\n\nexport const value = add(1, 2) + addAgain(3, 4)\n"
@@ -201,6 +217,7 @@ for (const specifier of [
   '@teo-garcia/eslint-config-shared/playwright',
   '@teo-garcia/eslint-config-shared/react',
   '@teo-garcia/eslint-config-shared/react-native',
+  '@teo-garcia/eslint-config-shared/angular',
 ]) {
   run('pnpm', [
     'exec',
@@ -216,6 +233,8 @@ const passingFixtures = [
   ['eslint.node.config.mjs', 'src/node/server.ts'],
   ['eslint.react.config.mjs', 'src/react/component.tsx'],
   ['eslint.react-native.config.mjs', 'src/native/app.tsx'],
+  ['eslint.angular.config.mjs', 'src/angular/valid.service.ts'],
+  ['eslint.angular.config.mjs', 'src/angular/valid.component.html'],
   ['eslint.playwright.config.mjs', 'e2e/smoke.spec.ts'],
 ]
 
@@ -237,6 +256,10 @@ expectLintFailure(
   'eslint.react-native.config.mjs',
   'src/native/bad-inline-style.tsx'
 )
+expectLintFailure(
+  'eslint.angular.config.mjs',
+  'src/angular/bad-output.component.ts'
+)
 expectLintFailure('eslint.playwright.config.mjs', 'e2e/focused.spec.ts')
 
 const basePrintedConfig = printConfig(
@@ -255,6 +278,10 @@ assertRule(
 assertRule(
   printConfig('eslint.react-native.config.mjs', 'src/native/app.tsx'),
   'react-native/no-inline-styles'
+)
+assertRule(
+  printConfig('eslint.angular.config.mjs', 'src/angular/valid.service.ts'),
+  '@angular-eslint/prefer-standalone'
 )
 assertRule(
   printConfig('eslint.playwright.config.mjs', 'e2e/smoke.spec.ts'),
