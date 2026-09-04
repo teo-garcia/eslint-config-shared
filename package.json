@@ -35,6 +35,10 @@
       "types": "./angular.d.ts"
     }
   },
+  "files": [
+    "*.d.ts",
+    "*.js"
+  ],
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -53,6 +57,7 @@
     "@eslint/js": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.58.0",
+    "angular-eslint": "^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0",
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
@@ -64,8 +69,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-simple-import-sort": "^12.1.1 || ^13.0.0",
     "eslint-plugin-testing-library": "^7.16.2",
-    "globals": "^17.4.0",
-    "angular-eslint": "^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0"
+    "globals": "^17.4.0"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-react": {
@@ -94,11 +98,12 @@
     }
   },
   "scripts": {
-    "check": "pnpm format:check && pnpm smoke:consumer",
+    "check": "pnpm format:check && pnpm audit --audit-level=high && pnpm smoke:consumer",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
-    "smoke:consumer": "node scripts/consumer-smoke.mjs"
+    "smoke:consumer": "node scripts/consumer-smoke.mjs",
+    "verify:release": "node scripts/verify-release.mjs"
   },
   "repository": {
     "type": "git",
@@ -109,10 +114,10 @@
   "types": "base.d.ts",
   "version": "0.4.3",
   "devDependencies": {
-    "@teo-garcia/prettier-config-shared": "^0.2.9",
-    "angular-eslint": "^22.0.0",
+    "@teo-garcia/prettier-config-shared": "^0.2.10",
+    "angular-eslint": "^22.2.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.0",
-    "prettier": "^3.8.1"
+    "lint-staged": "^17.4.1",
+    "prettier": "^3.9.6"
   }
 }

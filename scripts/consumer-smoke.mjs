@@ -109,6 +109,38 @@ if (!tarballName) {
   throw new Error('pnpm pack did not create a tarball')
 }
 
+const tarballFiles = run('tar', ['-tzf', path.join(tarballDir, tarballName)], {
+  cwd: packageRoot,
+  stdio: 'pipe',
+})
+  .toString('utf8')
+  .trim()
+  .split('\n')
+  .sort()
+const expectedTarballFiles = [
+  'package/LICENSE',
+  'package/README.md',
+  'package/angular.d.ts',
+  'package/angular.js',
+  'package/base.d.ts',
+  'package/base.js',
+  'package/node.d.ts',
+  'package/node.js',
+  'package/package.json',
+  'package/playwright.d.ts',
+  'package/playwright.js',
+  'package/react-native.d.ts',
+  'package/react-native.js',
+  'package/react.d.ts',
+  'package/react.js',
+].sort()
+
+if (JSON.stringify(tarballFiles) !== JSON.stringify(expectedTarballFiles)) {
+  throw new Error(
+    `Unexpected packed files:\n${tarballFiles.map((file) => `- ${file}`).join('\n')}`
+  )
+}
+
 writeJson(path.join(consumerDir, 'package.json'), {
   private: true,
   type: 'module',
